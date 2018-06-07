@@ -7,13 +7,13 @@
 
 #include "circular_buffer.h"
 
-void CircularBuffer_Init(uint8_t *buffer, circular_list_t *list, uint32_t count){
-	list->buffer = buffer;
+void CircularBuffer_Init(uint8_t *buff, circular_list_t *list, uint32_t count){
+	list->buffer = buff;
 
-	list->readP = buffer;
-	list->writeP = buffer;
+	list->readP = buff;
+	list->writeP = buff;
 
-	list->listEnd = (buffer + (sizeof(uint8_t) * count));
+	list->listEnd = (buff + (sizeof(uint8_t) * count));
 	list->itemCount = 0;
 }
 

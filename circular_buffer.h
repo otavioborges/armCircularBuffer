@@ -19,7 +19,7 @@ typedef struct{
 	uint32_t itemCount;
 } circular_list_t;
 
-void CircularBuffer_Init(uint8_t *buffer, circular_list_t *list, uint32_t count);
+void CircularBuffer_Init(uint8_t *buff, circular_list_t *list, uint32_t count);
 uint8_t CircularBuffer_Read(circular_list_t *buffer);
 uint32_t CircularBuffer_ReadList(circular_list_t *buffer, uint8_t *values);
 void CircularBuffer_Write(circular_list_t *buffer, uint8_t value);
