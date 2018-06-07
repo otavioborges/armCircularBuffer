@@ -21,6 +21,7 @@ typedef struct{
 
 void CircularBuffer_Init(uint8_t *buffer, circular_list_t *list, uint32_t count);
 uint8_t CircularBuffer_Read(circular_list_t *buffer);
+uint32_t CircularBuffer_ReadList(circular_list_t *buffer, uint8_t *values);
 void CircularBuffer_Write(circular_list_t *buffer, uint8_t value);
 void CircularBuffer_WriteList(circular_list_t *buffer, uint8_t *values, uint32_t length);
 

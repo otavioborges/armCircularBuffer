@@ -28,6 +28,21 @@ uint8_t CircularBuffer_Read(circular_list_t *buffer){
 	return result;
 }
 
+uint32_t CircularBuffer_ReadList(circular_list_t *buffer, uint8_t *values){
+	uint32_t items = buffer->itemCount;
+
+	for(uint32_t idx = 0; idx < items; idx++){
+		values[idx] = *buffer->readP;
+
+		buffer->itemCount--;
+		buffer->readP++;
+		if(buffer->readP == buffer->listEnd)
+			buffer->readP = buffer->buffer;
+	}
+
+	return items;
+}
+
 void CircularBuffer_Write(circular_list_t *buffer, uint8_t value){
 	(*buffer->writeP) = value;
 
